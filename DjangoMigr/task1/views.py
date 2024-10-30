@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .forms import UserRegister
-from models import *
+from .models import *
 
 
 def sign_up_by_html(request):
