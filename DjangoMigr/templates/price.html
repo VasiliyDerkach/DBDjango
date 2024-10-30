@@ -12,8 +12,8 @@
         {{ block.super }}
     {% endblock %}
     {% block content %}
-        {% for a in games %}
-            <p>{{ a }}</p>
+        {% for game in games %}
+            <p>{{ game.title }}|{{ game.description }}. Стоимость: {{ game.cost }}</p>
         {% endfor %}
         {{ block.super }}
     {% endblock %}
