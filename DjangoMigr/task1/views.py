@@ -1,16 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .forms import UserRegister
-users = ['user1','user2']
-def user_valid(**kwargs):
-    err = []
-    if kwargs['username'] in users:
-        err.append('Пользователь уже существует')
-    if kwargs['password']!=kwargs['repeat_password']:
-        err.append('Пароли не совпадают')
-    if int(kwargs['age']) < 18:
-        err.append('Вы должны быть старше 18')
-    return err
+from models import *
+
 
 def sign_up_by_html(request):
     info = {}
@@ -22,14 +14,13 @@ def sign_up_by_html(request):
         repeat_password = request.POST.get('repeat_password')
 
         age = request.POST.get('age')
-        err = user_valid(username=username,repeat_password=repeat_password,password=password,age=age)
-        info['len_error'] = len(err)
-        if len(err) == 0:
-            users.append(username)
-            return HttpResponse(f'Приветствуем {username}!')
+        usr = Buyer.objects.filter(name = username)
+        if usr:
+            return HttpResponse("Пользователь с таким именем уже существует")
         else:
-            info['error'] = err
-            return HttpResponse(err)
+            Buyer.objects.create(name = username, age = age, balance = 0)
+            return HttpResponse(f'Приветствуем {username}!')
+
     info['formtype'] = 'html'
     return render(request,'registration_page.html', context= info)
 # Create your views here.
@@ -44,27 +35,27 @@ def sign_up_by_django(request):
             password = form.cleaned_data['password']
             repeat_password = form.cleaned_data['repeat_password']
             age = form.cleaned_data['age']
-            err = user_valid(username=username, repeat_password=repeat_password, password=password, age=age)
-            if len(err) == 0:
-                users.append(username)
-                return HttpResponse(f'Приветствуем {username}!')
+            usr = Buyer.objects.filter(name=username)
+            if usr:
+                return HttpResponse("Пользователь с таким именем уже существует")
             else:
-                info['error'] = err
-                return HttpResponse(err)
+                Buyer.objects.create(name=username, age=age, balance=0)
+
     else:
         # print('django non post')
         form = UserRegister()
 
     info['form'] = form
     info['formtype'] = 'django'
-    info['len_error'] = len(err)
+
     return render(request,'registration_page.html', context=info)
 
 def main(request):
     context = {'pagename': 'Главная страница'}
     return render(request,"mainpage.html", context)
 def price(request):
-    context = {'games': ['Atomic Heart', "Cyberpunk 2077",'Monopolya'], 'pagename': 'Игры'}
+    games=Game.objects.all()
+    context = {'games': games, 'pagename': 'Игры'}
     return render(request,"price.html", context)
 def card(request):
     context = {'pagename': 'Корзина'}
