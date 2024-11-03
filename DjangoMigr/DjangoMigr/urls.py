@@ -20,7 +20,7 @@ from task1.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-path('',main),
+    path('',main),
     path('card/',card),
     path('price/',price),
     path('form/',sign_up_by_html),

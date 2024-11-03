@@ -12,4 +12,10 @@ class Game(models.Model):
     age_limited = models.BooleanField(default=False)
     buyer = models.ManyToManyField(Buyer,related_name='gamebuyers')
 
+class Post(models.Model):
+    title = models.CharField(max_length=100,verbose_name='Заголовок поста')
+    content = models.TextField(verbose_name='Содержание поста')
+    class Meta:
+        verbose_name = 'Пост'
+        verbose_name_plural = 'Пост'
 # Create your models here.
