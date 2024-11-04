@@ -12,7 +12,53 @@
         {{ block.super }}
     {% endblock %}
     {% block content %}
-        {% for game in games %}
+        {% if page_obj.has_other_pages %}
+            <nav aria-label="Page navigator">
+                <ul class="page-item">
+                    {% if page_obj.has_previos %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
+
+                            </a>
+                        </li>
+                    {% else %}
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" aria-label="Previous">
+                            </a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </nav>
+        {% endif %}
+        {% for i in page_obj.paginator.page_range %}
+            {% if page_obj.number == i %}
+                <li class="page-item active" aria-current="page">
+                    <a class="page-link" href="#">
+                        {{ i }}
+                    </a>
+                </li>
+            {% else %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ i }}">
+                        {{ i }}
+                    </a>
+                </li>
+            {% endif %}
+        {% endfor %}
+        {% if page_obj.has_next %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">
+
+                </a>
+            </li>
+        {% else %}
+            <li class="page-item disabled">
+                <a class="page-link" href="#" aria-label="Next">
+
+                </a>
+            </li>
+        {% for game in page_obj %}
+
             <p>{{ game.title }}|{{ game.description }}. Стоимость: {{ game.cost }} <button>Купить</button></p>
         {% endfor %}
         {{ block.super }}

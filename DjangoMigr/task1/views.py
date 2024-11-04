@@ -1,3 +1,4 @@
+from django.core.paginator import Paginator
 from django.shortcuts import render
 from django.http import HttpResponse
 from .forms import UserRegister
@@ -55,7 +56,11 @@ def main(request):
     return render(request,"mainpage.html", context)
 def price(request):
     games=Game.objects.all()
-    context = {'games': games, 'pagename': 'Игры'}
+    page_lmt = 5
+    pagnt = Paginator(games,page_lmt)
+    page_num = request.GET.get('page')
+    page_obj = paginator.get_page(page_num)
+    context = {'games': games, 'pagename': 'Игры','page_limit': page_lmt}
     return render(request,"price.html", context)
 def card(request):
     context = {'pagename': 'Корзина'}
