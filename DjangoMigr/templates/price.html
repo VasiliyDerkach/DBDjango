@@ -12,6 +12,12 @@
         {{ block.super }}
     {% endblock %}
     {% block content %}
+        <label for="page_lmt">Строк на странице:</label>
+        <select id="page_lmt" name="page_limit">
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="5">5</option>
+        </select>
         {% if page_obj.has_other_pages %}
             <nav aria-label="Page navigator">
                 <ul class="page-item">
@@ -57,6 +63,7 @@
 
                 </a>
             </li>
+        {% endif %}
         {% for game in page_obj %}
 
             <p>{{ game.title }}|{{ game.description }}. Стоимость: {{ game.cost }} <button>Купить</button></p>
