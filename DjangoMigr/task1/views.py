@@ -56,7 +56,10 @@ def main(request):
     return render(request,"mainpage.html", context)
 def price(request):
     games=Game.objects.all()
-    page_lmt = request.GET.get('page_limit')
+    if request.GET.get('page_limit'):
+        page_lmt = request.GET.get('page_limit')
+    else:
+        page_lmt = 5
     pagnt = Paginator(games,page_lmt)
     page_num = request.GET.get('page')
     page_obj = pagnt.get_page(page_num)
