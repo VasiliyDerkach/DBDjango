@@ -56,14 +56,14 @@ def main(request):
     return render(request,"mainpage.html", context)
 def price(request):
     games=Game.objects.all()
-    if request.GET.get('page_limit'):
-        page_lmt = request.GET.get('page_limit')
-    else:
-        page_lmt = 5
-    pagnt = Paginator(games,page_lmt)
+    page_lmt = 5
+    # if request.method == 'POST':
+    if request.POST.get('page_limit'):
+        page_lmt = request.form('page_limit')
+    pagnt = Paginator(games, page_lmt)
     page_num = request.GET.get('page')
     page_obj = pagnt.get_page(page_num)
-    context = {'games': games, 'pagename': 'Игры','page_limit': page_lmt,'page_obj': page_obj}
+    context = {'games': games, 'pagename': 'Игры','page_limit': page_lmt,'page_obj': page_obj,'page_num': page_num}
     return render(request,"price.html", context)
 def card(request):
     context = {'pagename': 'Корзина'}
