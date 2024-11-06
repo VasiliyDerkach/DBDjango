@@ -12,26 +12,15 @@
         {{ block.super }}
     {% endblock %}
     {% block content %}
+
         <form method="post">
             <label for="page_limit">Строк на странице:</label>
             <select id="page_limit" name="page_limit">
-                <option value=2
-                        {% if page_num == 2 %}
-                            selected
-                        {%endif %}
-                >2</option>
-                <option value=3
-                        {% if page_num == 3 %}
-                            selected
-                        {%endif %}
-                >3</option>
-                <option value=5
-                        {% if page_num == 5 %}
-                            selected
-                        {%endif %}
-
-                >5</option>
+                {% for s in page_limits %}
+                    <option value= {{ s }} {% if page_limit == s %} selected {% endif %}> {{ s }} </option>
+                {% endfor %}
             </select>
+            <input type="hidden" value="">
         </form>
         {% if page_obj.has_other_pages %}
             <nav aria-label="Page navigator">
