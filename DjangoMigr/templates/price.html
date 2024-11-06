@@ -14,13 +14,14 @@
     {% block content %}
 
         <form method="post">
+            {% csrf_token %}
             <label for="page_limit">Строк на странице:</label>
             <select id="page_limit" name="page_limit">
                 {% for s in page_limits %}
                     <option value= {{ s }} {% if page_limit == s %} selected {% endif %}> {{ s }} </option>
                 {% endfor %}
             </select>
-            <input type="hidden" value="">
+            <button type="submit">Обновить</button>
         </form>
         {% if page_obj.has_other_pages %}
             <nav aria-label="Page navigator">

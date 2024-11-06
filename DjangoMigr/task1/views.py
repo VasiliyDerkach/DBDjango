@@ -59,8 +59,8 @@ def price(request):
     page_lmt = 3
     page_limits = [2,3,5]
     if request.method == 'POST':
-        if request.POST.get('page_limit'):
-            page_lmt = request.POST.get('page_limit')
+        # if request.POST.get('page_limit'):
+        page_lmt = request.POST.get('page_limit')
     pagnt = Paginator(games, page_lmt)
     page_num = request.GET.get('page')
     page_obj = pagnt.get_page(page_num)
