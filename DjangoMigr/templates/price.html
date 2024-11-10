@@ -18,7 +18,8 @@
             <label for="page_limit">Строк на странице:</label>
             <select id="page_limit" name="page_limit">
                 {% for s in page_limits %}
-                    <option value= {{ s }} {% if page_limit == s %} selected {% endif %}> {{ s }} </option>
+<!--                    <option value= {{ s }} onclick="location.href='{% url 'price' %}'" {% if page_limit == s %} selected {% endif %} > {{ s }} </option>-->
+                    <option value= {{ s }} {% if page_limit == s %} selected {% endif %} > {{ s }} </option>
                 {% endfor %}
             </select>
             <button type="submit">Обновить</button>

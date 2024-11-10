@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bf20861b-8e05-4087-9871-0e7cf250fa71" name="Changes" comment="0311">
+    <list default="true" id="bf20861b-8e05-4087-9871-0e7cf250fa71" name="Changes" comment="0711">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DjangoMigr/task1/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/DjangoMigr/task1/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DjangoMigr/task1/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/DjangoMigr/task1/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DjangoMigr/DjangoMigr/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/DjangoMigr/DjangoMigr/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DjangoMigr/DjangoMigr/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/DjangoMigr/DjangoMigr/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DjangoMigr/task1/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/DjangoMigr/task1/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DjangoMigr/templates/price.html" beforeDir="false" afterPath="$PROJECT_DIR$/DjangoMigr/templates/price.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -164,7 +165,63 @@
       <option name="project" value="LOCAL" />
       <updated>1730652866149</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="0411">
+      <option name="closed" value="true" />
+      <created>1730731004486</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1730731004486</updated>
+    </task>
+    <task id="LOCAL-00015" summary="0511">
+      <option name="closed" value="true" />
+      <created>1730804988292</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1730804988292</updated>
+    </task>
+    <task id="LOCAL-00016" summary="0511+">
+      <option name="closed" value="true" />
+      <created>1730805771404</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1730805771404</updated>
+    </task>
+    <task id="LOCAL-00017" summary="0611">
+      <option name="closed" value="true" />
+      <created>1730882859659</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1730882859659</updated>
+    </task>
+    <task id="LOCAL-00018" summary="0611+">
+      <option name="closed" value="true" />
+      <created>1730903044737</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1730903044737</updated>
+    </task>
+    <task id="LOCAL-00019" summary="0611++">
+      <option name="closed" value="true" />
+      <created>1730909316040</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1730909316040</updated>
+    </task>
+    <task id="LOCAL-00020" summary="0711">
+      <option name="closed" value="true" />
+      <created>1730959999821</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1730959999821</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -175,6 +232,13 @@
     <MESSAGE value="3010" />
     <MESSAGE value="3010+" />
     <MESSAGE value="0311" />
-    <option name="LAST_COMMIT_MESSAGE" value="0311" />
+    <MESSAGE value="0411" />
+    <MESSAGE value="0511" />
+    <MESSAGE value="0511+" />
+    <MESSAGE value="0611" />
+    <MESSAGE value="0611+" />
+    <MESSAGE value="0611++" />
+    <MESSAGE value="0711" />
+    <option name="LAST_COMMIT_MESSAGE" value="0711" />
   </component>
 </project>

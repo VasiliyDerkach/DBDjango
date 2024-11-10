@@ -4,6 +4,7 @@ class Buyer(models.Model):
     balance = models.DecimalField(max_digits=10, decimal_places=2)
     age = models.DecimalField(max_digits=3, decimal_places=0)
 
+
 class Game(models.Model):
     title = models.CharField(max_length=100)
     cost = models.DecimalField(max_digits=7, decimal_places=2)
